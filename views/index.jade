@@ -1,0 +1,32 @@
+extends layout
+
+block style
+  style.
+    body {
+      background: #{colorPalette[0]}; /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(left top, #{colorPalette[0]}, #{colorPalette[1]}); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(bottom right, #{colorPalette[0]}, #{colorPalette[1]}); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(bottom right, #{colorPalette[0]}, #{colorPalette[1]}); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(bottom right, #{colorPalette[0]}, #{colorPalette[1]}); /* Standard syntax */
+
+      color: white;
+    }
+
+block content
+  div(class='centered')
+    table(id='title')
+      tbody
+        tr
+          th
+            img(src='https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Raspberry_Pi_Logo.svg/810px-Raspberry_Pi_Logo.svg.png', height='50px')
+          th
+            h1= title
+
+    table(id='stats')
+      tbody
+        tr
+          th(class='th-right') Temperature
+          th= temp
+        tr
+          th(class='th-right') CPU
+          th= cpu
