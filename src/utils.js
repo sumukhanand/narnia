@@ -9,7 +9,7 @@ class Utils {
         if (error) {
           return reject(error);
         }
-        return resolve({ stdout, stderr });
+        return resolve([ stdout, stderr ]);
       });
     });
   }
