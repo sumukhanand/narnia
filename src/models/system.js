@@ -4,7 +4,7 @@ const Utils = require('../utils');
 class System {
 
   static getTemperature() {
-    return Utils.execAsync('/opt/vc/bin/vcgencmd measure_temp')
+    return Utils.execAsync('/bin/vcgencmd measure_temp')
     .spread((stdout, stderr) => {
       let temp = 0.0;
       let tempOutput = 'temp=0\'C';
